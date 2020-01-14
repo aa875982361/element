@@ -17,7 +17,15 @@
     'borderBase': '$--border-color-base',
     'borderLight': '$--border-color-light',
     'borderLighter': '$--border-color-lighter',
-    'borderExtraLight': '$--border-color-extra-light'
+    'borderExtraLight': '$--border-color-extra-light',
+    'blue': '$--color-chart-blue',
+    'green': '$--color-chart-green',
+    'orange': '$--color-chart-orange',
+    'blueGrey': '$--color-chart-blue-grey',
+    'roseRed': '$--color-chart-rose-red',
+    'purple': '$--color-chart-purple',
+    'celadon': '$--color-chart-celadon',
+    'yellow': '$--color-chart-yellow'
   };
   const original = {
     primary: '#5D81F9',
@@ -30,11 +38,19 @@
     textPrimary: '#2D303B',
     textRegular: '#6A6C73',
     textSecondary: '#A7A8AD',
-    textPlaceholder: '#C6C7CA',
     borderBase: '#DCDFE6',
+    textPlaceholder: '#C6C7CA',
     borderLight: '#E4E7ED',
     borderLighter: '#EBEEF5',
-    borderExtraLight: '#F2F6FC'
+    borderExtraLight: '#F2F6FC',
+    blue: '#66AAF3',
+    green: '#62E0AD',
+    orange: '#EF735E',
+    blueGrey: '#7585A2',
+    roseRed: '#F871A0',
+    purple: '#9D88F7',
+    celadon: '#7AB4B0',
+    yellow: '#F7C739'
   }
   export default {
     created() {
@@ -48,8 +64,11 @@
         return tintColor(color, tint);
       },
       setGlobal() {
+        console.log("eeee", window.userThemeConfig);
         if (window.userThemeConfig) {
           this.global = window.userThemeConfig.global;
+          console.log("global",this.global)
+          console.log(this.global)
         }
       }
     },
@@ -70,20 +89,32 @@
         borderBase: '',
         borderLight: '',
         borderLighter: '',
-        borderExtraLight: ''
+        borderExtraLight: '',
+        blue: '',
+        green: '',
+        orange: '',
+        blueGrey: '',
+        roseRed: '',
+        purple: '',
+        celadon: '',
+        yellow: ''
       }
     },
     watch: {
       global: {
         immediate: true,
         handler(value) {
+          console.log("watch", value)
           Object.keys(original).forEach((o) => {
             if (value[varMap[o]]) {
+              console.log('value', this)
               this[o] = value[varMap[o]]
             } else {
+              console.log('original', o, original[o])
               this[o] = original[o]
             }
           });
+          console.log('this', this)
         }
       }
     },
@@ -239,6 +270,61 @@ Element 主要品牌颜色是鲜艳、友好的蓝色。
       >基础白色<div class="value">{{white}}</div></div>
       <div class="demo-color-box demo-color-box-other bg-transparent">透明<div class="value">Transparent</div>
       </div>
+    </div>
+  </el-col>
+</el-row>
+
+### 图表辅助色
+
+用于图表数据、信息展示、标签/分组用色
+
+<el-row :gutter="12">
+  <el-col :span="6" :xs="{span: 12}">
+    <div class="demo-color-box-chart"
+    :style="{ background: blue }"
+    ><div class="value">01-Blue</div><div class="value">{{blue}}</div>
+    </div>
+  </el-col>
+  <el-col :span="6" :xs="{span: 12}">
+    <div class="demo-color-box-chart"
+    :style="{ background: green }"
+    ><div class="value">02-Green</div><div class="value">#{{green}}</div>
+    </div>
+  </el-col>
+  <el-col :span="6" :xs="{span: 12}">
+    <div class="demo-color-box-chart"
+    :style="{ background: orange }"
+    ><div class="value">03-Orange</div><div class="value">{{orange}}</div>
+    </div>
+  </el-col>
+  <el-col :span="6" :xs="{span: 12}">
+    <div class="demo-color-box-chart"
+    :style="{ background: blueGrey }"
+    ><div class="value">04-Blue Grey</div><div class="value">{{blueGrey}}</div>
+    </div>
+  </el-col>
+  <el-col :span="6" :xs="{span: 12}">
+    <div class="demo-color-box-chart"
+    :style="{ background: roseRed }"
+    ><div class="value">05-Rose Red</div><div class="value">{{roseRed}}</div>
+    </div>
+  </el-col>
+  <el-col :span="6" :xs="{span: 12}">
+    <div class="demo-color-box-chart"
+    :style="{ background: purple }"
+    ><div class="value">06-Purple</div><div class="value">{{purple}}</div>
+    </div>
+  </el-col>
+  <el-col :span="6" :xs="{span: 12}">
+    <div class="demo-color-box-chart"
+    :style="{ background: celadon }"
+    ><div class="value">07-Celadon</div><div class="value">{{celadon}}</div>
+    </div>
+  </el-col>
+  <el-col :span="6" :xs="{span: 12}">
+    <div class="demo-color-box-chart"
+    :style="{ background: yellow }"
+    ><div class="value">08-Yellow</div><div class="value">{{yellow}}</div>
     </div>
   </el-col>
 </el-row>
