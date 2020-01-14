@@ -64,11 +64,8 @@
         return tintColor(color, tint);
       },
       setGlobal() {
-        console.log("eeee", window.userThemeConfig);
         if (window.userThemeConfig) {
           this.global = window.userThemeConfig.global;
-          console.log("global",this.global)
-          console.log(this.global)
         }
       }
     },
@@ -104,17 +101,13 @@
       global: {
         immediate: true,
         handler(value) {
-          console.log("watch", value)
           Object.keys(original).forEach((o) => {
             if (value[varMap[o]]) {
-              console.log('value', this)
               this[o] = value[varMap[o]]
             } else {
-              console.log('original', o, original[o])
               this[o] = original[o]
             }
           });
-          console.log('this', this)
         }
       }
     },
