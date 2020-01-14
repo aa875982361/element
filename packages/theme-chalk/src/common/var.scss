@@ -67,6 +67,24 @@ $--border-color-lighter: #EBEEF5 !default;
 /// color|1|Border Color|3
 $--border-color-extra-light: #F2F6FC !default;
 
+// README:  用于图表作用的颜色；不要随意修改
+/// color|1|Chart Color|1
+$--color-chart-blue:#66AAF3;
+/// color|1|Chart Color|1
+$--color-chart-green:#62E0AD;
+/// color|1|Chart Color|1
+$--color-chart-orange:#EF735E;
+/// color|1|Chart Color|1
+$--color-chart-blue-grey:#7585A2;
+/// color|1|Chart Color|1
+$--color-chart-rose-red:#F871A0;
+/// color|1|Chart Color|1
+$--color-chart-purple:#9D88F7;
+/// color|1|Chart Color|1
+$--color-chart-celadon:#7AB4B0;
+/// color|1|Chart Color|1
+$--color-chart-yellow:#F7C739;
+
 // Background
 /// color|1|Background Color|4
 $--background-color-base: #F0F2F5 !default; // F5F7FA
