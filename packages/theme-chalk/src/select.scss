@@ -12,11 +12,15 @@
   display: inline-block;
   position: relative;
 
-  .el-select__tags
-    >span {
+  .el-select__tags{
+    &>span {
       display: contents;
     }
-
+    &-text{
+      color: $--select-option-info-span; 
+    }
+  }
+    
   &:hover {
     .el-input__inner {
       border-color: $--select-border-color-hover;
@@ -81,7 +85,7 @@
     border: none;
     outline: none;
     padding: 0;
-    margin-left: 15px;
+    margin-left: 6px;
     color: $--select-multiple-input-color;
     font-size: $--select-font-size;
     appearance: none;
@@ -119,9 +123,6 @@
     flex-wrap: wrap;
   }
 
-  .el-tag__close {
-    margin-top: -2px;
-  }
 
   .el-tag {
     box-sizing: border-box;
@@ -129,20 +130,29 @@
     margin: 2px 0 2px 6px;
     background-color: #f0f2f5;
 
-    &__close.el-icon-close {
-      background-color: $--color-text-placeholder;
-      right: -7px;
-      top: 0;
-      color: $--color-white;
+    .el-tag__close {
+      margin-top: -2px;
 
-      &:hover {
-        background-color: $--color-text-secondary;
+      &.el-icon-close {
+        background-color: $--color-text-placeholder;
+        right: -4px;
+        top: 0;
+        color: $--color-white;
+  
+        &:hover {
+          background-color: $--color-text-secondary;
+        }
+  
+        &::before {
+          display: block;
+          transform: translate(0, .5px);
+        }
       }
 
-      &::before {
-        display: block;
-        transform: translate(0, .5px);
-      }
+    }
+
+    &--info{
+      border: 0;
     }
   }
 }

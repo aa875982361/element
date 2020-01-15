@@ -317,7 +317,8 @@ $--select-option-disabled-color: $--color-text-placeholder !default;
 $--select-option-disabled-background: $--color-white !default;
 /// height||Other|4
 $--select-option-height: 34px !default;
-$--select-option-hover-background: #F7F8FE !default; // $--background-color-base
+$--select-option-hover-background: #F5F6F9 !default; // $--background-color-base
+$--select-option-info-span: #2D303B !default; //
 /// color||Color|0
 $--select-option-selected-font-color: $--color-primary !default;
 $--select-option-selected-hover: #F7F8FE !default; // $--background-color-base
